@@ -11,7 +11,7 @@ namespace LearningApi.Data
         }
 
         //Entity Framework
-        //Mean please create Regions table for use ig does not exit
+        //Mean please create Regions table for use table does not exit
         public DbSet<Region> Regions { get; set; }
         public DbSet<Walk> Walks { get; set; }
         public DbSet<WalkDifficulty> WalkDifficultys { get; set; }
