@@ -1,3 +1,6 @@
+using LearningApi.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace LearningApi
 {
     public class Program
@@ -12,6 +15,10 @@ namespace LearningApi
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<LearningApiDbContext>(options =>{
+                options.UseSqlServer(builder.Configuration.GetConnectionString("LearningApi"));
+            });
 
             var app = builder.Build();
 
